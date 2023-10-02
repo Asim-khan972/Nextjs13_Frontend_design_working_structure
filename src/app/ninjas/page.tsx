@@ -1,6 +1,6 @@
 import styles from './../Jobs.module.css'
 
-
+import Link from 'next/link'
  
 
 
@@ -24,11 +24,11 @@ const Ninjas =async () => {
     <div>
       <h1>All Ninjas</h1>
       {data.map(el => (
-        <div key={el.id}>
-          <a className={styles.single}>
+        <Link href={'/ninjas/'+ el.id}  key={el.id}>
+          <div className={styles.single}>
             <h3>{ el.name }</h3>
-          </a>
-        </div>
+          </div>
+        </Link>
       ))}
     </div>
   );
